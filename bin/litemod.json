@@ -1,0 +1,9 @@
+{
+    "name" : "Lighting Fix",
+    "mcversion" : "1.7.10",
+    "author": "Its_its",
+    "description": "A mod in which fixes the Sky lighting when enabled, but remember to have have a fullbright mod or have gamma up because it will cause black lines.",
+    "classTransformerClasses" : [
+        "me.its.lightingfix.main.Transformer"
+    ]
+}
