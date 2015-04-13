@@ -1,0 +1,10 @@
+{
+    "name": "${ant.project.name}",
+    "mcversion": "${litemodversion}",
+    "revision": "${build.number}",
+    "author": "${author}",
+    "description": "A mod in which fixes the Sky lighting when enabled, but remember to have have a fullbright mod or have gamma up because it will cause black lines.",
+    "classTransformerClasses" : [
+        "me.its.lightingfix.main.Transformer"
+    ]
+}
