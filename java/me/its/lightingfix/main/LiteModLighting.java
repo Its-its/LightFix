@@ -27,7 +27,7 @@ public class LiteModLighting implements Tickable {
 	KeyBinding key_enable = new KeyBinding("itsits.mod.lightingfix.enable", Keyboard.KEY_L, "itsits.mods");
 	
 	public String getVersion() {
-		return "1.0";
+		return "1.1";
 	}
 	
 	public String getName() {
