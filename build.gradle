@@ -1,0 +1,65 @@
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+		maven {
+			name = "forge"
+			url = "http://files.minecraftforge.net/maven"
+		}
+		maven {
+			name = "sonatype"
+			url = "https://oss.sonatype.org/content/repositories/snapshots/"
+		}
+		maven {
+			name = 'sponge'
+			url = 'http://repo.spongepowered.org/maven'
+		}
+	}
+	dependencies {
+		classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+		classpath 'org.spongepowered:mixingradle:0.4-SNAPSHOT'
+	}
+}
+
+apply plugin: 'net.minecraftforge.gradle.liteloader'
+apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'maven'
+
+defaultTasks 'build'
+
+targetCompatibility = '1.8'
+sourceCompatibility = '1.8'
+
+version = "1.0"
+group = "net.itstjf" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "lightingfix"
+
+minecraft {
+	version = "1.12.2"
+	mappings = "snapshot_20170919"
+	runDir = "run"
+}
+
+sourceSets {
+	main {
+		// Refmap declaration must match the refmap name specified in the json config
+		refMap = "mixins.lighting.refmap.json"
+	}
+}
+
+mixin {
+	defaultObfuscationEnv notch
+}
+
+litemod {
+	json {
+		name = "Lighting Fix"
+		author = "Its_its"
+		mcversion = "1.12.2"
+		mixinConfigs += "mixins.lighting.json"
+	}
+}
+
+jar {
+	from litemod.outputs
+}

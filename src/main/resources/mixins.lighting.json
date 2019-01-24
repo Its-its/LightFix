@@ -1,0 +1,12 @@
+{
+    "required": true,
+    "minVersion": "0.5.10",
+    "package": "net.itstjf.lightingfix.mixin",
+    "refmap": "mixins.lighting.refmap.json",
+    "mixins": [
+        "MixinWorldClient"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
